@@ -7,7 +7,7 @@ export default class ClientsController {
     // Listagem de clientes
     static index() {
         return new Promise((resolve, reject) => {
-            axios.get(`${configs.api.apiUrl}/api/clients`).then(data => resolve(data.data)).catch(() => reject(true));
+            axios.get(`${configs.api.apiUrl}/clients`).then(data => resolve(data.data)).catch(() => reject(true));
         })
     }
 }

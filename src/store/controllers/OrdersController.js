@@ -7,14 +7,14 @@ export default class OrdersController {
     // Listagem dos pedidos
     static index() {
         return new Promise((resolve, reject) => {
-            axios.get(`${configs.api.apiUrl}/api/orders`).then(data => resolve(data.data)).catch(() => reject(true));
+            axios.get(`${configs.api.apiUrl}/orders`).then(data => resolve(data.data)).catch(() => reject(true));
         })
     }
 
     // Cria pedido
     static create(send) {
         return new Promise((resolve, reject) => {
-            axios.post(`${configs.api.apiUrl}/api/orders`, Object.assign({}, send))
+            axios.post(`${configs.api.apiUrl}/orders`, Object.assign({}, send))
                 .then((data) => resolve(data.data))
                 .catch((data) => reject(true))
         });
@@ -23,14 +23,14 @@ export default class OrdersController {
     // Retorna um pedido por id
     static edit(orderId) {
         return new Promise((resolve, reject) => {
-            axios.get(`${configs.api.apiUrl}/api/orders/${orderId}`).then(data => resolve(data.data)).catch(() => reject(true));
+            axios.get(`${configs.api.apiUrl}/orders/${orderId}`).then(data => resolve(data.data)).catch(() => reject(true));
         })
     }
 
     // Atualiza pedido
     static update(send) {        
         return new Promise((resolve, reject) => {
-            axios.put(`${configs.api.apiUrl}/api/orders/${send.id}`, Object.assign({}, send))
+            axios.put(`${configs.api.apiUrl}/orders/${send.id}`, Object.assign({}, send))
                 .then((data) => resolve(data.data))
                 .catch((data) => reject(true))
         });
@@ -39,7 +39,7 @@ export default class OrdersController {
     // Deleta pedido
     static delete(orderId) {
         return new Promise((resolve, reject) => {
-            axios.delete(`${configs.api.apiUrl}/api/orders/${orderId}`)
+            axios.delete(`${configs.api.apiUrl}/orders/${orderId}`)
                 .then((data) => resolve(true))
                 .catch((data) => reject(true))
         });

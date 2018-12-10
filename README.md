@@ -20,9 +20,8 @@
 
 ### Comandos 
 #### Gulp
-* `gulp run` -> executa o servidor com url de api de desenvolvimento;
-* `gulp run --env {production, dev}` -> modificam a url do servidor para acesso;
-* `gulp run-app` --> executa em desenvolvimento.
+* `gulp dev` -> modifica parametros para desenvolvimento;
+* `gulp production` -> modifica parametros para produção.
 
 Obs: Os comandos gulps precisam ser configurados para as URLs desejadas.
 

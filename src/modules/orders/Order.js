@@ -93,6 +93,9 @@ export default class Order extends React.Component {
     }
 
     render() {
+
+        const orderItems = this.state.order.orderItems ? this.state.order.orderItems.filter(orderItem => !orderItem._destroy) : [];
+        
         return (
 
             <FormValidate
@@ -139,7 +142,7 @@ export default class Order extends React.Component {
                                     </div>
                                 </div>
                                 {
-                                    this.state.order.orderItems.filter(orderItem => !orderItem._destroy).map((orderItem, index) => {
+                                    orderItems.map((orderItem, index) => {
                                         return (
                                             <div key={index}>
                                                 <_OrderItem
